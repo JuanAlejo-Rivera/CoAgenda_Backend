@@ -12,7 +12,7 @@ const crearUsuario = async(req, res = response) => {
         let usuario = await Usuario.findOne({email:email});
 
         if(usuario){
-            res.status(400).json({
+           return res.status(400).json({
                 ok:false,
                 msg:'El usuario ya existe'
             })
@@ -56,7 +56,7 @@ const loginUsuario = async(req, res = response) => {
 
         //Confirmamos el email
         if(!usuario){
-            res.status(400).json({
+           return res.status(400).json({
                 ok:false,
                 msg:'El usuario no existe con ese email'
             });
@@ -103,6 +103,7 @@ const revalidarToken = async(req, res = response) => {
 
     res.json({
         ok: true,
+        uid,name,
         token
     })
 
