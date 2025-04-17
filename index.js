@@ -30,7 +30,8 @@ app.use(express.json());
 app.use('/api/auth', require('./routes/auth'))
 app.use('/api/events', require('./routes/events'))
 
-
+//esto se ejecuta cuando no se encuentra la ruta solicitada
+//esto es para que el cliente pueda acceder a la aplicacion sin problemas
 app.use('*',(req, res) => {
     res.sendFile(path.join(__dirname + '/public/index.html'))
 });
