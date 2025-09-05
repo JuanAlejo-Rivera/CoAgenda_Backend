@@ -32,11 +32,15 @@ app.use('/api/events', require('./routes/events'))
 
 //esto se ejecuta cuando no se encuentra la ruta solicitada
 //esto es para que el cliente pueda acceder a la aplicacion sin problemas
-app.use('*',(req, res) => {
-    res.sendFile(path.join(__dirname + '/public/index.html'))
+// app.use('*',(req, res) => {
+//     res.sendFile(path.join(__dirname + '/public/index.html'))
+// });
+
+app.get('/', (req, res) => {
+    res.json({ ok: true, msg: 'API funcionando 🚀' });
 });
 
 //Escuchar peticiones
-app.listen(process.env.PORT, () =>{
+app.listen(process.env.PORT, () => {
     console.log(`Servidor Corriendo en puerto ${process.env.PORT}`)
 }) 
