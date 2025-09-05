@@ -11,7 +11,6 @@ const { crearUsuario, loginUsuario, revalidarToken } = require('../controllers/a
 const { validarCampos } = require('../middlewares/validar-campos');
 const { validarJWT } = require('../middlewares/validar-jwt');
 
-
 // Definir una ruta GET en "/api/auth/"
 //endpoints
 router.post(
