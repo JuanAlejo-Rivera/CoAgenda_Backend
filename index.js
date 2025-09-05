@@ -19,7 +19,7 @@ app.use(cors());
 
 // Servir archivos estáticos desde la carpeta "public"
 //use es middleware, se ejecuanta cuando alguien hace una peticion a mi servidor
-app.use(express.static('public'));
+// app.use(express.static('public'));
 
 
 //lectura y parseo del body
